@@ -37,6 +37,38 @@ class GenerosController{
         
     }
 
+    static actualizarParcialmente = async(req,res) =>{
+        
+        const {id} = req.params 
+        const info = req.body;
+        
+        
+        try{ 
+           const objetoGeneros = new Generos()
+           const genero = await objetoGeneros.updateParcial(id,info);
+           res.json(genero);
+        }catch(error){
+            res.status(500).json({error:error.message})
+        }
+
+    }
+
+    static eliminarRegistro = async(req,res) =>{
+         
+        const {id} = req.params;
+
+        try{ 
+            const objetoGeneros = new Generos()
+            const genero = await objetoGeneros.delete(id);
+            res.json(genero);
+         }catch(error){
+             res.status(500).json({error:error.message})
+         }
+
+    }
+
+
+
 
 }
 
