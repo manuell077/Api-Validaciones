@@ -6,9 +6,9 @@ const router= express.Router();
 router.get('/',lenguajesController.getAllLenguajes)
 router.post('/',lenguajesController.postLenguajes)
 router.put('/:id',lenguajesController.actualizarLenguajes)
-router.patch('/:id',lenguajesController.actualizarParcialmente
-    
-)
+router.patch('/:id',lenguajesController.actualizarParcialmente)
+router.delete('/:id',lenguajesController.eliminarRegistro)    
+
 
 
 router.put('/:id',(req,res)=>{
